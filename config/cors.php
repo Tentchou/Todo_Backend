@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['https://todoproject-ten.vercel.app'],
+    'allowed_origins' => ['https://todoproject-ten.vercel.app', 'https://todobackend-production-1553.up.railway.app'],
 
     'allowed_origins_patterns' => [],
 
