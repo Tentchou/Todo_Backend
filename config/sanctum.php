@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', 'todoproject-ten.vercel.app')),
+    'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS')),
 
 
 
