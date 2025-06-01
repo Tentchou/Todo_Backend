@@ -10,7 +10,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
+// use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,27 +23,6 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 |
 */
 
-
-// Route pour envoyer le lien de vérification
-Route::post('/email/verification-notification', function (Request $request) {
-    $request->user()->sendEmailVerificationNotification();
-
-    return response()->json(['status' => 'verification-link-sent']);
-})->middleware(['auth:sanctum'])->name('verification.send');
-
-// Route pour vérifier l'email
-Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-    $request->fulfill();
-
-    return response()->json(['message' => 'Email verified']);
-})->middleware(['auth:sanctum', 'signed'])->name('verification.verify');
-
-// Route pour vérifier si email est vérifié
-Route::get('/email/verify', function (Request $request) {
-    return $request->user()->hasVerifiedEmail()
-        ? response()->json(['verified' => true])
-        : response()->json(['verified' => false]);
-})->middleware(['auth:sanctum'])->name('verification.notice');
 
 // Routes d'authentification
 Route::post('/register', [RegisterController::class, 'register']);
