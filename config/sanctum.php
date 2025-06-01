@@ -15,8 +15,7 @@ return [
     |
     */
 
-    'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', 'https,todoproject-ten.vercel.app')),
-    
+    'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', 'localhost,todoproject-ten.vercel.app')),
 
 
 
