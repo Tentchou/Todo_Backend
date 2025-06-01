@@ -197,6 +197,5 @@ return [
     */
 
     'same_site' => 'none',
-    'secure' => true,
 
 ];
