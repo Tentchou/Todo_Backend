@@ -20,7 +20,7 @@ return [
     'allowed_methods' => ['*'],
 
     'allowed_origins' => [
-        'https://todoproject-ten.vercel.app', 'http://localhost:5173'
+        'https://todoproject-ten.vercel.app'
      ],
 
     'allowed_origins_patterns' => [],
