@@ -46,3 +46,12 @@ Route::middleware('auth:sanctum')->group(function () {
     // Routes pour les Tags
     Route::apiResource('tags', TagController::class);
 });
+
+Route::get('/debug-env', function () {
+    return [
+        'APP_ENV' => env('APP_ENV'),
+        'SESSION_SAMESITE' => env('SESSION_SAMESITE'),
+        'SESSION_SECURE_COOKIE' => env('SESSION_SECURE_COOKIE'),
+        'SANCTUM_STATEFUL_DOMAINS' => env('SANCTUM_STATEFUL_DOMAINS'),
+    ];
+});
