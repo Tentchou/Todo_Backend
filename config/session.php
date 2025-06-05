@@ -196,6 +196,7 @@ return [
     |
     */
 
-    'same_site' => 'none',
+    // 'same_site' => 'none',
+    'same_site' => env('SESSION_SAMESITE', 'none'), // Utilisez env pour plus de flexibilité, et 'none' comme fallback
 
 ];
