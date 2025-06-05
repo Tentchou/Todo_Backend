@@ -22,7 +22,14 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+Route::get('/debug-env', function () {
+    return [
+        'APP_ENV' => env('APP_ENV'),
+        'SESSION_SAMESITE' => env('SESSION_SAMESITE'),
+        'SESSION_SECURE_COOKIE' => env('SESSION_SECURE_COOKIE'),
+        'SANCTUM_STATEFUL_DOMAINS' => env('SANCTUM_STATEFUL_DOMAINS'),
+    ];
+});
 
 // Routes d'authentification
 Route::post('/register', [RegisterController::class, 'register']);
@@ -47,11 +54,4 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('tags', TagController::class);
 });
 
-Route::get('/debug-env', function () {
-    return [
-        'APP_ENV' => env('APP_ENV'),
-        'SESSION_SAMESITE' => env('SESSION_SAMESITE'),
-        'SESSION_SECURE_COOKIE' => env('SESSION_SECURE_COOKIE'),
-        'SANCTUM_STATEFUL_DOMAINS' => env('SANCTUM_STATEFUL_DOMAINS'),
-    ];
-});
+
